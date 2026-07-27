@@ -18,25 +18,39 @@ st.set_page_config(
 # Import logo/gambar
 logo = Image.open("_ MDPI Primary Logo.png")
 
-# Kustomisasi CSS untuk jarak atas halaman
+# Kustomisasi CSS untuk jarak atas halaman dan responsivitas
 st.markdown("""
 <style>
 .block-container{
     padding-top:2rem;
+}
+.map-container {
+    border: 3px solid #2C3E50; 
+    border-radius: 14px;
+    overflow: hidden; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+    width: 100%;
+    height: 600px;
+    min-height: 600px;
+}
+@media (max-width: 768px) {
+    .map-container {
+        height: 450px;
+        min-height: 450px;
+    }
+}
+@media (max-width: 480px) {
+    .map-container {
+        height: 350px;
+        min-height: 350px;
+    }
 }
 </style>
 """, unsafe_allow_html=True)
 
 # 2. Desain Bingkai (Frame) dan Peta Web
 kode_bingkai_peta = """
-<div style="
-    border: 3px solid #2C3E50; 
-    border-radius: 14px;
-    overflow: hidden; 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
-    width: 100%;               
-    height: 600px; /* TINGGI PETA DI DALAM BINGKAI */
-">
+<div class="map-container">
     <iframe src="https://ikhsanruntukahu.github.io/Grid_FG_Ikan_Karang_Buru_2026/" 
             width="100%" 
             height="100%" 
@@ -78,7 +92,7 @@ with kolom_tengah:
         st.empty()
     
     # Menampilkan peta di bawah logo & judul
-    components.html(kode_bingkai_peta, height=620)
+    components.html(kode_bingkai_peta, height=650)
 
     # 4. Teks Keterangan di Bawah Peta
     st.markdown("""
