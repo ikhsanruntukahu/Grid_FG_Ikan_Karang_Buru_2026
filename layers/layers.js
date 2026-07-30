@@ -22,27 +22,27 @@ var wms_layers = [];
                 url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png'
             })
         });
-var format_20260726_GRID_FG_LOGBOOK_TFCCA_BURU_2 = new ol.format.GeoJSON();
-var features_20260726_GRID_FG_LOGBOOK_TFCCA_BURU_2 = format_20260726_GRID_FG_LOGBOOK_TFCCA_BURU_2.readFeatures(json_20260726_GRID_FG_LOGBOOK_TFCCA_BURU_2, 
+var format_GridLokasiPenangkapan_2 = new ol.format.GeoJSON();
+var features_GridLokasiPenangkapan_2 = format_GridLokasiPenangkapan_2.readFeatures(json_GridLokasiPenangkapan_2, 
             {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_20260726_GRID_FG_LOGBOOK_TFCCA_BURU_2 = new ol.source.Vector({
+var jsonSource_GridLokasiPenangkapan_2 = new ol.source.Vector({
     attributions: ' ',
 });
-jsonSource_20260726_GRID_FG_LOGBOOK_TFCCA_BURU_2.addFeatures(features_20260726_GRID_FG_LOGBOOK_TFCCA_BURU_2);
-var lyr_20260726_GRID_FG_LOGBOOK_TFCCA_BURU_2 = new ol.layer.Vector({
+jsonSource_GridLokasiPenangkapan_2.addFeatures(features_GridLokasiPenangkapan_2);
+var lyr_GridLokasiPenangkapan_2 = new ol.layer.Vector({
                 declutter: false,
-                source:jsonSource_20260726_GRID_FG_LOGBOOK_TFCCA_BURU_2, 
-                style: style_20260726_GRID_FG_LOGBOOK_TFCCA_BURU_2,
-                popuplayertitle: '20260726_GRID_FG_LOGBOOK_TFCCA_BURU',
+                source:jsonSource_GridLokasiPenangkapan_2, 
+                style: style_GridLokasiPenangkapan_2,
+                popuplayertitle: 'Grid Lokasi Penangkapan',
                 interactive: true,
-                title: '<img src="styles/legend/20260726_GRID_FG_LOGBOOK_TFCCA_BURU_2.png" /> 20260726_GRID_FG_LOGBOOK_TFCCA_BURU'
+                title: '<img src="styles/legend/GridLokasiPenangkapan_2.png" /> Grid Lokasi Penangkapan'
             });
 
-lyr_GoogleSatellite_0.setVisible(false);lyr_OSMStandard_1.setVisible(true);lyr_20260726_GRID_FG_LOGBOOK_TFCCA_BURU_2.setVisible(false);
-var layersList = [lyr_GoogleSatellite_0,lyr_OSMStandard_1,lyr_20260726_GRID_FG_LOGBOOK_TFCCA_BURU_2];
-lyr_20260726_GRID_FG_LOGBOOK_TFCCA_BURU_2.set('fieldAliases', {'PageName': 'PageName', 'PageNumber': 'PageNumber', 'No_Grid': 'Nomor Grid FG', 'LUAS_HA': 'LUAS_HA', });
-lyr_20260726_GRID_FG_LOGBOOK_TFCCA_BURU_2.set('fieldImages', {'PageName': 'Hidden', 'PageNumber': 'Hidden', 'No_Grid': 'TextEdit', 'LUAS_HA': 'Hidden', });
-lyr_20260726_GRID_FG_LOGBOOK_TFCCA_BURU_2.set('fieldLabels', {'No_Grid': 'inline label - always visible', });
-lyr_20260726_GRID_FG_LOGBOOK_TFCCA_BURU_2.on('precompose', function(evt) {
+lyr_GoogleSatellite_0.setVisible(false);lyr_OSMStandard_1.setVisible(true);lyr_GridLokasiPenangkapan_2.setVisible(true);
+var layersList = [lyr_GoogleSatellite_0,lyr_OSMStandard_1,lyr_GridLokasiPenangkapan_2];
+lyr_GridLokasiPenangkapan_2.set('fieldAliases', {'PageName': 'PageName', 'PageNumber': 'PageNumber', 'No_Grid': 'No_Grid', 'LUAS_HA': 'LUAS_HA', });
+lyr_GridLokasiPenangkapan_2.set('fieldImages', {'PageName': 'Hidden', 'PageNumber': 'Hidden', 'No_Grid': 'TextEdit', 'LUAS_HA': 'Hidden', });
+lyr_GridLokasiPenangkapan_2.set('fieldLabels', {'No_Grid': 'inline label - always visible', });
+lyr_GridLokasiPenangkapan_2.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';
 });
